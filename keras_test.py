@@ -4,7 +4,7 @@ label_path = 'cnews_label.txt'
 word_num_path = 'cnews_word_num.txt'
 word2vec_model_path = 'word2vec_model'
 max_length = 1500
-max_features = 20000
+max_features = 10000
 
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
@@ -74,22 +74,17 @@ word_index = tokenizer.word_index
 
 sequences = tokenizer.texts_to_sequences(train_data)
 
-# data = pad_sequences(sequences, maxlen=max_features)
-data = tokenizer.sequences_to_matrix(sequences, mode='binary')
+data = pad_sequences(sequences, maxlen=max_features)
+# data = tokenizer.sequences_to_matrix(sequences, mode='binary')
 print('data:')
 print(data)
-
-
-
-# tokenizer = Tokenizer(filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n', lower=True, split=" ")
-# tokenizer.fit_on_texts()
-
 
 '''label prepocessing'''
 # print(label)
 label = to_categorical(label)
 print('label:')
 print(label)
+print('label\'s shape:')
 print(label.shape)
 
 '''Embedding'''
@@ -104,9 +99,10 @@ for i in range(len(vocab_list)):
     embedding_matrix[i + 1] = vocab_list[i][1]
 
 '''main'''
-# print(data.shape)
+print('data\'s shape:')
+print(data.shape)
 
-inputs = Input(shape=(max_features,))
+inputs = Input(shape=data.shape)
 
 # emb = Embedding(output_dim=512, input_dim=max_features, input_length=max_length)(inputs)
 emb = Embedding(len(embedding_matrix), 100, weights=[embedding_matrix], input_length=max_length, trainable=False)(inputs)
