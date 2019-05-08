@@ -20,7 +20,7 @@ preprocessing_cnews.py
 # 实验结果：
 
 方法|f1|recall|precision
-----|--------|--|------|---------
+----|--------|--------|---------
 LSTM（with itself and a flatten)|0.899090938618863|0.9016|0.906488425734453
 SimpleRNN(with only itself ）|0.456839776711619|0.4582|0.486761156984287
 SimpleRNN(with a Dense）|0.607950788357987|0.6158|0.627004915062812
