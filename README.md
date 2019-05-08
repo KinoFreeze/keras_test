@@ -19,7 +19,7 @@ preprocessing_cnews.py
 
 
 # 实验结果：
-
+    
 方法|f1|recall|precision
 ----|--------|--|------|---------
 LSTM（with itself and a flatten)|0.899090938618863|0.9016|0.906488425734453
