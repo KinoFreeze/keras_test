@@ -1,4 +1,3 @@
-# keras_test
 这是为keras的使用而编写的自我练习程序
 ====================================
 # 环境依赖：
@@ -19,13 +18,12 @@ preprocessing_cnews.py
 
 
 # 实验结果：
-    
 
-|方法 | f1 | recall | precision|  
-|----|--------|--|------|---------|  
-|LSTM（with itself and a flatten)|0.899090938618863|0.9016|0.906488425734453|
-|SimpleRNN(with only itself ）|0.456839776711619|0.4582|0.486761156984287|
-|SimpleRNN(with a Dense）|0.607950788357987|0.6158|0.627004915062812|
-|CNN（with only Conv1D）|0.893030792871051|0.8946|0.897924332106227|
-|CNNadd_convolution1DandMaxPolling1Ddoubled|0.908714193119703|0.9102|0.912187193540087|
-|LSTMaddConvolution1DandMaxPooling1D|0.890570255487257|0.8934|0.902463295185187|
+方法|f1|recall|precision
+----|--------|--|------|---------
+LSTM（with itself and a flatten)|0.899090938618863|0.9016|0.906488425734453
+SimpleRNN(with only itself ）|0.456839776711619|0.4582|0.486761156984287
+SimpleRNN(with a Dense）|0.607950788357987|0.6158|0.627004915062812
+CNN（with only Conv1D）|0.893030792871051|0.8946|0.897924332106227
+CNNadd_convolution1DandMaxPolling1Ddoubled|0.908714193119703|0.9102|0.912187193540087
+LSTMaddConvolution1DandMaxPooling1D|0.890570255487257|0.8934|0.902463295185187
